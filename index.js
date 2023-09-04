@@ -1,22 +1,32 @@
-//Calcular nota final de alumnos ingresados
+import { Product } from "./productos.js";
+import { UI } from "./interfaz.js";
 
-let trueOrFalse = true
-while(trueOrFalse){
-    const nombre = prompt("Ingrese su nombre");
-    const apellido = prompt("Ingrese su apellido");
-    const parcial = parseFloat(prompt("Parcial"));
-    const final = parseFloat(prompt("Final"));
-    const nota = (parcial+final)/2;
+// DOM Eventos
+document
+  .getElementById("product-form")
+  .addEventListener("submit", function (e) {
 
-    if(nombre && apellido == "ESC"){
-        alert("El alumno no asistio al final");
-        trueOrFalse = false;
-    } else if(nota >= 10){
-        alert(`La nota final de ${nombre} ${apellido} es ${nota} Aprobado`);
-        trueOrFalse = false
+    e.preventDefault();
+
+    const name = document.getElementById("name").value,
+      price = document.getElementById("price").value,
+      year = document.getElementById("year").value;
+
+    const product = new Product(name, price, year);
+
+    const ui = new UI();
+
+    if (name === "" || price === "" || year === "") {
+      ui.showMessage("Please Insert data in all fields", "danger");
     }
-    else{
-        alert(`La nota final de ${nombre} ${apellido} es ${nota} Desaprobado`)
-        trueOrFalse = false
-    }
-}
+
+    ui.addProduct(product);
+    ui.showMessage("Product Added Successfully", "success");
+    ui.resetForm();
+  });
+
+document.getElementById("product-list").addEventListener("click", (e) => {
+  const ui = new UI();
+  ui.deleteProduct(e.target);
+  e.preventDefault();
+});
