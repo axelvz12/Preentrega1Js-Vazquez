@@ -56,20 +56,32 @@
                   class="form-control"
                 />
               </div>
-              <input
-                type="submit"
-                value="Save"
-                class="btn btn-primary btn-block"
-              />
+            <div class="col-lg-12 mt-5">
+              <button class="btn btn-success" id="Submit" onclick="AddData()">
+                save
+              </button>
+            </div>
             </form>
           </div>
         </div>
-
-        
-        <div id="product-list" class="col-md-8"></div>
       </div>
     </div>
 
-    <script src="index.js" type="module"></script>
+    <div class="row m-5">
+      <div class="col-12">
+        <table class="table table-bordered" id="crudTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Year</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
