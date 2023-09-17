@@ -75,4 +75,17 @@ function AddData(){
     }
 }
 
+function deleteData(index){
+    let product_list;
+    if(localStorage.getItem("product_list") == null){
+        product_list = [];
+    }
+    else{
+        product_list = JSON.parse(localStorage.getItem("product_list"));
+    }
+
+    product_list.splice(index, 1);
+    localStorage.setItem("product_list", JSON.stringify(product_list));
+    showData();
+}
 
