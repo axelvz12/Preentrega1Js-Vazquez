@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "email": "trt",
+      "nombre": "tret",
+      "telefono": "tretr",
+      "id": 1
+    },
+    {
+      "email": "",
+      "nombre": "",
+      "telefono": "",
+      "id": 2
+    },
+    {
+      "email": "axel_master_manda@hotmail.com",
+      "nombre": "Nilda Graciela",
+      "telefono": "112658989",
+      "id": 3
+    },
+    {
+      "email": "",
+      "nombre": "",
+      "telefono": "",
+      "id": 4
+    },
+    {
+      "email": "",
+      "nombre": "",
+      "telefono": "",
+      "id": 5
+    },
+    {
+      "email": "peeepe@gmail.com",
+      "nombre": "Pedro mendoza",
+      "telefono": "115687978",
+      "id": 6
+    }
+  ]
+}
